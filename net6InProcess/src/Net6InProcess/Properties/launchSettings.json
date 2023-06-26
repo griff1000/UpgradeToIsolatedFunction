@@ -1,0 +1,9 @@
+{
+  "profiles": {
+    "Net6InProcess": {
+      "commandName": "Project",
+      "commandLineArgs": "--port 7174",
+      "launchBrowser": false
+    }
+  }
+}
