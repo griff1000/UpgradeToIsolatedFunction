@@ -52,7 +52,7 @@ resource functionMain 'Microsoft.Web/sites@2021-01-15' = {
         }
         {
           name: 'FUNCTIONS_WORKER_RUNTIME'
-          value: 'dotnet-isolated'
+          value: 'dotnet'
         }
         {
           name: 'WEBSITE_RUN_FROM_PACKAGE'
@@ -62,7 +62,7 @@ resource functionMain 'Microsoft.Web/sites@2021-01-15' = {
       ftpsState: 'Disabled'
       http20Enabled: true
       minTlsVersion: '1.2'
-      netFrameworkVersion: 'v7.0'
+      netFrameworkVersion: 'v6.0'
       use32BitWorkerProcess: true
       phpVersion: ''
       alwaysOn: false
