@@ -16,6 +16,28 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net6InProcess", "net6InProc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Net7Isolated", "net7Isolated\src\Net7Isolated\Net7Isolated.csproj", "{D6688A1F-D6EC-44E3-B6CF-B865038E4507}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "infra", "infra", "{BE763EA4-1163-4E1E-BF91-83F71E5CEE35}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net6InProcess", "net6InProcess", "{80ACC46F-51FF-4635-A899-B326040678DD}"
+	ProjectSection(SolutionItems) = preProject
+		net6InProcess\infra\app\main.bicep = net6InProcess\infra\app\main.bicep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "net7Isolated", "net7Isolated", "{3E382237-F85F-4104-8CBB-493D6E51128C}"
+	ProjectSection(SolutionItems) = preProject
+		net7Isolated\infra\app\main.bicep = net7Isolated\infra\app\main.bicep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{3DE0B1B1-B813-47E1-93A3-465BD495DBDB}"
+	ProjectSection(SolutionItems) = preProject
+		net6InProcess\infra\app\Modules\functionapp.bicep = net6InProcess\infra\app\Modules\functionapp.bicep
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Modules", "Modules", "{BEB1400B-A84A-45B4-8716-28E77E0B3C6C}"
+	ProjectSection(SolutionItems) = preProject
+		net7Isolated\infra\app\Modules\functionapp.bicep = net7Isolated\infra\app\Modules\functionapp.bicep
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,6 +59,12 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{80ACC46F-51FF-4635-A899-B326040678DD} = {BE763EA4-1163-4E1E-BF91-83F71E5CEE35}
+		{3E382237-F85F-4104-8CBB-493D6E51128C} = {BE763EA4-1163-4E1E-BF91-83F71E5CEE35}
+		{3DE0B1B1-B813-47E1-93A3-465BD495DBDB} = {80ACC46F-51FF-4635-A899-B326040678DD}
+		{BEB1400B-A84A-45B4-8716-28E77E0B3C6C} = {3E382237-F85F-4104-8CBB-493D6E51128C}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F5DA699C-42CC-4634-9E31-75E2C54BE951}
