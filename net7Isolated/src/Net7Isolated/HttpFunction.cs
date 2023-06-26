@@ -7,9 +7,18 @@ namespace Net7Isolated
     using Microsoft.OpenApi.Models;
     using System.Net;
     using System.Text.Json;
+    using FunctionCommon.Models;
+    using FunctionCommon.Services;
 
     public class HttpFunction
     {
+        private readonly IMyService _myService;
+
+        public HttpFunction(IMyService myService)
+        {
+            _myService = myService;
+        }
+
         [Function("PostFunction")]
         [OpenApiOperation(operationId: "Post", tags: new[] { "name" })]
         [OpenApiRequestBody("application/json", typeof(MyModel), Required = true)]
@@ -21,7 +30,7 @@ namespace Net7Isolated
 
             var model = await JsonSerializer.DeserializeAsync<MyModel>(req.Body);
 
-            var responseMessage = $"Hello, {model!.Name}. This HTTP triggered function executed successfully.";
+            var responseMessage = $"{_myService.SayHello(model!.Name)}. This HTTP triggered function executed successfully.";
 
             await response.WriteStringAsync(responseMessage);
 
@@ -42,7 +51,7 @@ namespace Net7Isolated
 
             var responseMessage = string.IsNullOrEmpty(name)
                 ? "This HTTP triggered function executed successfully. Pass a name in the request body for a personalized response."
-                : $"Hello, {name}. This HTTP triggered function executed successfully.";
+                : $"{_myService.SayHello(name)}. This HTTP triggered function executed successfully.";
 
             response.WriteString(responseMessage);
 

@@ -1,4 +1,4 @@
-﻿namespace FunctionCommon
+﻿namespace FunctionCommon.Models
 {
     using System.Text.Json.Serialization;
 

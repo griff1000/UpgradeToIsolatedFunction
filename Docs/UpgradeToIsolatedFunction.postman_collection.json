@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "17e6e233-8242-44fa-9315-6d5e7738f850",
+		"name": "UpgradeToIsolatedFunction",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17986647"
+	},
+	"item": [
+		{
+			"name": "GetFunction",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:{{Port}}/api/GetFunction/:name",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"api",
+						"GetFunction",
+						":name"
+					],
+					"variable": [
+						{
+							"key": "name",
+							"value": "Fred"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostFunction",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Barney\",\r\n    \"age\": 32\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:{{Port}}/api/PostFunction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "{{Port}}",
+					"path": [
+						"api",
+						"PostFunction"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
