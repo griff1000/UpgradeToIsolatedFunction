@@ -13,6 +13,7 @@ namespace Net7Isolated
         }
     }
 
+    #region new helper classes
     public class MyInfo
     {
         public MyScheduleStatus ScheduleStatus { get; set; }
@@ -28,4 +29,6 @@ namespace Net7Isolated
 
         public DateTime LastUpdated { get; set; }
     }
+
+    #endregion
 }
