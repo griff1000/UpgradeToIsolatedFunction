@@ -1,23 +1,15 @@
-using System;
-using Microsoft.Azure.Functions.Worker;
-using Microsoft.Extensions.Logging;
-
 namespace Net7Isolated
 {
+    using Microsoft.Azure.Functions.Worker;
+    using Microsoft.Extensions.Logging;
+
     public class TimerFunction
     {
-        private readonly ILogger _logger;
-
-        public TimerFunction(ILoggerFactory loggerFactory)
-        {
-            _logger = loggerFactory.CreateLogger<TimerFunction>();
-        }
-
         [Function("TimerFunction")]
-        public void Run([TimerTrigger("0 */5 * * * *")] MyInfo myTimer)
+        public void Run([TimerTrigger("0 */5 * * * *")] MyInfo myTimer, FunctionContext context)
         {
-            _logger.LogInformation($"C# Timer trigger function executed at: {DateTime.Now}");
-            _logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
+            var logger = context.GetLogger("TimerFunction");
+            logger.LogInformation($"Next timer schedule at: {myTimer.ScheduleStatus.Next}");
         }
     }
 
