@@ -7,6 +7,6 @@
     public class BindingContainer
     {
         [CosmosDBOutput("FunctionUpgrade", "People", Connection = "COSMOS_CONNECTIONSTRING", PartitionKey = "/name")]
-        public List<MyModel> MyModels { get; set; } = new List<MyModel>();
+        public List<MyModel> MyModels { get; set; } = new ();
     }
 }
