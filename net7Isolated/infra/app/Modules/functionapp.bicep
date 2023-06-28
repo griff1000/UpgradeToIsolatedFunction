@@ -58,6 +58,14 @@ resource functionMain 'Microsoft.Web/sites@2021-01-15' = {
           name: 'WEBSITE_RUN_FROM_PACKAGE'
           value: '1'
         }
+        {
+            name: 'SB_CONNECTIONSTRING'
+            value:'<Service Bus Connection String>'
+        }
+        {
+            name: 'COSMOS_CONNECTIONSTRING'
+            value:'<Cosmos Connection String>'
+        }
       ]
       ftpsState: 'Disabled'
       http20Enabled: true

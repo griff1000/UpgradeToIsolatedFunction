@@ -1,14 +1,13 @@
 namespace Net7Isolated
 {
-    using FunctionCommon;
+    using FunctionCommon.Models;
+    using FunctionCommon.Services;
     using Microsoft.Azure.Functions.Worker;
     using Microsoft.Azure.Functions.Worker.Http;
     using Microsoft.Azure.WebJobs.Extensions.OpenApi.Core.Attributes;
     using Microsoft.OpenApi.Models;
     using System.Net;
     using System.Text.Json;
-    using FunctionCommon.Models;
-    using FunctionCommon.Services;
 
     public class HttpFunction
     {
