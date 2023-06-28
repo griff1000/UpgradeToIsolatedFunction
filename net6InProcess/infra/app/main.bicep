@@ -1,7 +1,8 @@
-param deployId string = '12345'
+@description('Unique identifier for this deployment')
+param deployId string
 
 module service 'Modules/functionapp.bicep' = {
-    name: 'functionappresources-${deployId}'
+    name: '${deployId}-functionappresources'
     params: {
         location: {
             name: 'North Europe'
